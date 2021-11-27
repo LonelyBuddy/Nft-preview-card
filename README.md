@@ -17,8 +17,8 @@ Users should be able to:
 
 ### Links
 
-- [Live]()
-- [Solution]()
+- [Live](https://lonelybuddy.github.io/Nft-preview-card/)
+- [Solution](https://www.frontendmentor.io/solutions/html-css3sass-ns2vh7tNq)
 
 ### Built with
 
