@@ -1,4 +1,5 @@
 @use 'function' as *;
+@use 'breakpoint' as *;
 
 .card {
   padding: rem(24);
@@ -7,12 +8,48 @@
   background: var(--veryDarkBlue-card-bg);
   box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.0952917);
 
+  @include breakpoint-up(medium) {
+    max-width: rem(350);
+    padding-bottom: rem(32);
+  }
+
   &__equilibrium-img-wrapper {
-    width: rem(278);
-    height: rem(278);
+    position: relative;
+    width: rem(279);
+    height: rem(279);
     overflow: hidden;
     border-radius: rem(8);
     margin-bottom: rem(24);
+
+    @include breakpoint-up(medium) {
+      width: rem(302);
+      height: rem(302);
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--cyan);
+        opacity: 0.5;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(/images/icon-view.svg) no-repeat center;
+      }
+    }
 
     img {
       width: 100%;
@@ -25,6 +62,11 @@
     font-size: rem(22);
     color: var(--white);
     margin-bottom: rem(12);
+
+    &:hover {
+      color: var(--cyan);
+      cursor: pointer;
+    }
   }
 
   &__description {
@@ -43,6 +85,11 @@
     margin-bottom: rem(16);
     font-size: rem(15);
 
+    @include breakpoint-up(medium) {
+      font-size: rem(16);
+      letter-spacing: rem(0.232);
+    }
+
     &__coin {
       display: flex;
       align-items: flex-start;
@@ -60,12 +107,17 @@
       display: flex;
       align-items: flex-start;
 
+      @include breakpoint-up(medium) {
+        font-size: rem(16);
+      }
+
       img {
         margin-right: rem(7.7);
       }
 
       span {
         color: var(--soft-blue);
+        line-height: 1;
       }
     }
   }
@@ -75,6 +127,11 @@
     align-items: center;
     font-size: rem(15);
     letter-spacing: rem(0.1431);
+
+    @include breakpoint-up(medium) {
+      font-size: rem(16);
+      letter-spacing: rem(0.185);
+    }
 
     img {
       width: rem(33);
@@ -87,6 +144,11 @@
 
       span {
         color: var(--white);
+
+        &:hover {
+          color: var(--cyan);
+          cursor: pointer;
+        }
       }
     }
   }

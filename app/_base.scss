@@ -1,3 +1,5 @@
+@use 'breakpoint' as *;
+
 /* Box sizing rules */
 *,
 *::before,
@@ -18,4 +20,20 @@ body {
   background: var(--veryDarkBlue-main-bg);
   display: grid;
   place-items: center;
+  position: relative;
+}
+
+footer {
+  color: var(--soft-blue);
+  position: absolute;
+  bottom: 30px;
+  font-size: 12px;
+
+  @include breakpoint-up(medium) {
+    font-size: 18px;
+  }
+
+  a {
+    color: var(--cyan);
+  }
 }
